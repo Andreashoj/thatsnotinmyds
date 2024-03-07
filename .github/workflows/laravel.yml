@@ -70,6 +70,6 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd ~/action-runner/_work
+          cd action-runners/_work
           git pull
           ./vendor/bin/sail up -d

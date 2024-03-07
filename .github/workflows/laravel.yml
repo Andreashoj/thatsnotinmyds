@@ -62,3 +62,15 @@ jobs:
         DB_USERNAME: postgres
         DB_PASSWORD: test
       run: ./vendor/bin/sail artisan test
+
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSHKEY }}
+        script: |
+          cd ~/action-runner/_work
+          git pull
+          ./vendor/bin/sail up -d

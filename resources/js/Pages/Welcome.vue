@@ -2,13 +2,17 @@
 import { Link } from '@inertiajs/vue3'
 import { ref } from 'vue'
 
+defineProps({
+    user: Object,
+})
+
 const count = ref(0)
 </script>
 
 <template>
     <main>
         <h1 class="text-3xl font-bold underline">
-            Hello world!
+            Hello world! {{ user }}
         </h1>
 
         <header>

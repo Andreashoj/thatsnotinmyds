@@ -17,6 +17,8 @@ const count = ref(0)
             <Link href="/contact">Contact</Link>
             hey there!
 
+            can i update??
+
             <button class="text-blue-500" @click="count += 1">adder</button>
             {{ count }}
         </header>

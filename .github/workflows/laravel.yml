@@ -37,7 +37,7 @@ jobs:
 
     - name: Test PostgreSQL Connection
       run: |
-        psql -h localhost -p 5432 -U postgres -d laravel -c 'SELECT 1;'
+        PGPASSWORD=test psql -h localhost -p 5432 -U postgres -d laravel -c 'SELECT 1;'
 
     - name: Install Dependencies
       run: composer install --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs

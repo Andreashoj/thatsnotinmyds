@@ -48,7 +48,14 @@ jobs:
 
     # - name: Wait for Sail to start
     #   run: sleep 30
-
+    - name: Print Environment Variables
+      run: |
+        echo "APP_NAME=$APP_NAME"
+        echo "APP_ENV=$APP_ENV"
+        echo "APP_KEY=$APP_KEY"
+        echo "APP_URL=$APP_URL"
+        echo "APP_PORT=$APP_PORT"
+        #
     - name: Deploy to server
       uses: appleboy/ssh-action@master
       with:

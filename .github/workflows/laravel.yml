@@ -55,6 +55,7 @@ jobs:
         host: ${{ secrets.SERVER_IP_ADDRESS }}
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 81
         script: |
           cd /root/actions-runner/_work/thatsnotinmyds
           git pull

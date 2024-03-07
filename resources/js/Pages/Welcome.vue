@@ -18,7 +18,7 @@ const count = ref(0)
             hey there!
 
             can i update??
-            YOOO
+            YOO
 
             <button class="text-blue-500" @click="count += 1">adder</button>
             {{ count }}

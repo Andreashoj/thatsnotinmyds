@@ -28,16 +28,8 @@ jobs:
     - name: Copy .env
       run: cp .env.example .env
 
-    - name: Wait for PostgreSQL to become ready
-      run: |
-        until pg_isready -h localhost -p 5432; do
-          echo "Waiting for PostgreSQL..."
-          sleep 2
-        done
-
-    - name: Test PostgreSQL Connection
-      run: |
-        PGPASSWORD=test psql -h localhost -p 5432 -U postgres -d laravel -c 'SELECT 1;'
+    - name: List Docker containers and ports
+      run: docker ps -a
 
     - name: Install Dependencies
       run: composer install --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs

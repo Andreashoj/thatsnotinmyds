@@ -49,6 +49,17 @@ jobs:
     # - name: Wait for Sail to start
     #   run: sleep 30
 
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP_ADDRESS }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd action-runners/_work
+          git pull
+          ./vendor/bin/sail up -d
+
     - name: Run Database Migrations
       run: ./vendor/bin/sail artisan migrate --force
 
@@ -61,14 +72,3 @@ jobs:
         DB_USERNAME: postgres
         DB_PASSWORD: test
       run: ./vendor/bin/sail artisan test
-
-    - name: Deploy to server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SERVER_IP_ADDRESS }}
-        username: ${{ secrets.SERVER_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          cd action-runners/_work
-          git pull
-          ./vendor/bin/sail up -d

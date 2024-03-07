@@ -43,8 +43,6 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
 
-    # - name: Run Sail
-    #   run: ./vendor/bin/sail up -d
 
     - name: Print Environment Variables
       run: |
@@ -64,7 +62,9 @@ jobs:
           cd /root/actions-runner/_work/thatsnotinmyds
           git pull
           composer install
-          ./vendor/bin/sail up -d
+
+    - name: Run Sail
+      run: ./vendor/bin/sail up -d
 
     - name: Wait for Sail to start
       run: sleep 30

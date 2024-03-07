@@ -29,7 +29,7 @@ jobs:
       run: cp .env.example .env
 
     - name: Install Dependencies
-      run: composer install --no-interaction --no-scripts --prefer-dist
+      run: composer install --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs
 
     - name: Generate key
       run: php artisan key:generate

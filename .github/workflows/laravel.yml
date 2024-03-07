@@ -43,11 +43,11 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
 
-    - name: Run Sail
-      run: ./vendor/bin/sail up -d
+    # - name: Run Sail
+    #   run: ./vendor/bin/sail up -d
 
-    - name: Wait for Sail to start
-      run: sleep 30
+    # - name: Wait for Sail to start
+    #   run: sleep 30
 
     - name: Run Database Migrations
       run: ./vendor/bin/sail artisan migrate --force

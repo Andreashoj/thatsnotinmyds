@@ -19,7 +19,7 @@ const count = ref(0)
 
             can i update??
             YOO
-
+THIS IS SICK!
             <button class="text-blue-500" @click="count += 1">adder</button>
             {{ count }}
         </header>

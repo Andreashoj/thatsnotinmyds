@@ -31,6 +31,12 @@ jobs:
     - name: Install Dependencies
       run: composer install --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs
 
+    - name: Install Node Dependencies
+      run: npm install
+
+    - name: Build Front-end Assets
+      run: npm run build
+
     - name: Generate key
       run: php artisan key:generate
 

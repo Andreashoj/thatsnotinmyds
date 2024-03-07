@@ -58,6 +58,7 @@ jobs:
         script: |
           cd /root/actions-runner/_work/thatsnotinmyds
           git pull
+          composer install
           ./vendor/bin/sail up -d
 
     - name: Run Database Migrations

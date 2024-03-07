@@ -1,34 +1,27 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
-import { ref } from 'vue'
-
+import ColorFinder from '../components/ColorFinder.vue'
+import Signup from '../components/Signup.vue'
 defineProps({
     user: Object,
 })
-
-const count = ref(0)
 </script>
 
 <template>
-    <main>
-        <h1 class="text-3xl font-bold underline">
-            Hello world! {{ user }}
-        </h1>
+    <main class="grid grid-cols-10 bg-gray-800 h-full">
+        <div class="col-start-3 col-span-6">
+            <h1 class="text-5xl font-black text-white text-center mt-36">
+                Find the perfect color match without leaving your design.
+            </h1>
 
-        <header>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            hey there!
+            <div class="grid grid-cols-7 mt-20">
+                <Signup class="col-span-2" />
 
-            can i update??
-            YOO
-            YOOOOOOOOO
-            <button class="text-blue-500" @click="count += 1">adder</button>
-            {{ count }}
-        </header>
-        <article>
-            <slot />
-        </article>
+                <div class="col-span-1 flex justify-center">
+                    <span class="block w-px h-full bg-gray-400" />
+                </div>
+
+                <ColorFinder class="col-span-4" />
+            </div>
+        </div>
     </main>
 </template>

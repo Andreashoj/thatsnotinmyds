@@ -8,4 +8,9 @@ export default {
         extend: {},
     },
     plugins: [],
+    safelist: [
+        {
+            pattern: /^bg-/, // This regular expression will match any class starting with `bg-`
+        },
+    ],
 }

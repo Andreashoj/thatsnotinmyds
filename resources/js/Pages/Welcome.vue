@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-    <main class="grid grid-cols-10 bg-gray-800 h-full">
+    <main class="grid grid-cols-10 bg-[#011627] h-full">
         <div class="col-start-3 col-span-6">
             <h1 class="text-5xl font-black text-white text-center mt-36">
                 Find the perfect color match without leaving your design.

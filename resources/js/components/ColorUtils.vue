@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import { useEyeDropper } from '@vueuse/core'
 import { EyeDropperIcon } from '@heroicons/vue/20/solid'
+import { watch, defineEmits } from 'vue'
 
 defineProps({
     previousColors: Array as () => string[]
 })
 
 const { isSupported, open, sRGBHex } = useEyeDropper()
+const emits = defineEmits(['update-color'])
+
+watch(sRGBHex, (val) => {
+    if (val) {
+        emits('update-color', val)
+    }
+})
 </script>
 <template>
     <div>

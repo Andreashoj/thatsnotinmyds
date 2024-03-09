@@ -6,7 +6,12 @@ defineProps({
     user: Object,
 })
 
+const color = ref('#fdfdfd')
 const previousColors = ref([])
+
+const updateColor = (val) => {
+    color.value = val
+}
 
 const updatePreviousColors = (color) => {
     let colorArray = JSON.parse(localStorage.getItem('colors')) || [];
@@ -36,11 +41,11 @@ onMounted(() => {
             </h1>
 
             <div class="grid grid-cols-7 mt-20">
-                <ColorFinder class="col-span-4" @update-previous-colors="updatePreviousColors" />
+                <ColorFinder class="col-span-4" v-model="color" @update-previous-colors="updatePreviousColors" />
                 <div class="col-span-1 flex justify-center">
                     <span class="block w-px h-full bg-gray-400" />
                 </div>
-                <ColorUtils class="col-span-2" :previous-colors="previousColors" />
+                <ColorUtils class="col-span-2" :previous-colors="previousColors" @update-color="updateColor" />
             </div>
         </div>
     </main>

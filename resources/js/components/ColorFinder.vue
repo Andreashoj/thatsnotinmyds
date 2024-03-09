@@ -4,7 +4,7 @@ import { findClosestColors } from '../utils/colorFinder';
 import ColorItem from './ColorItem.vue';
 import Dropdown from '../base/Dropdown.vue';
 
-const color = ref('#fdfdfd');
+const color = defineModel({ default: '#fdfdfd' })
 const frameworkOptions = [{ name: 'Tailwind', value: 'tailwind' }]
 const framework = ref(frameworkOptions[0])
 const getClosestColors = computed(() => findClosestColors(color.value))

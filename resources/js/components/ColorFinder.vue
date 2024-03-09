@@ -1,17 +1,26 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch, defineEmits } from 'vue';
 import { findClosestColors } from '../utils/colorFinder';
 import ColorItem from './ColorItem.vue';
 import Dropdown from '../base/Dropdown.vue';
+
 const color = ref('#fdfdfd');
 const frameworkOptions = [{ name: 'Tailwind', value: 'tailwind' }]
 const framework = ref(frameworkOptions[0])
 const getClosestColors = computed(() => findClosestColors(color.value))
+const emits = defineEmits(['update-previous-colors'])
+
 
 const validHex = computed(() => {
     const isHexCode = /^#([0-9A-Fa-f]{6})$/;
     return isHexCode.test(color.value);
 })
+
+watch(color, () => {
+    if (validHex.value) {
+        emits('update-previous-colors', color.value)
+    }
+});
 
 </script>
 <template>

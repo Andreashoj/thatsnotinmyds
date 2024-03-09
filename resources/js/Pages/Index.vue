@@ -1,9 +1,29 @@
 <script setup>
 import ColorFinder from '../components/ColorFinder.vue'
-import Signup from '../components/Signup.vue'
 import ColorUtils from '../components/ColorUtils.vue';
+import { ref, onMounted } from 'vue'
 defineProps({
     user: Object,
+})
+
+const previousColors = ref([])
+
+const updatePreviousColors = (color) => {
+    let colorArray = JSON.parse(localStorage.getItem('colors')) || [];
+
+    colorArray.unshift(color);
+
+    if (colorArray.length > 10) {
+        colorArray.pop();
+    }
+
+    localStorage.setItem('colors', JSON.stringify(colorArray));
+
+    previousColors.value = colorArray
+}
+
+onMounted(() => {
+    previousColors.value = JSON.parse(localStorage.getItem('colors')) || []
 })
 </script>
 
@@ -16,12 +36,11 @@ defineProps({
             </h1>
 
             <div class="grid grid-cols-7 mt-20">
-                <ColorFinder class="col-span-4" />
+                <ColorFinder class="col-span-4" @update-previous-colors="updatePreviousColors" />
                 <div class="col-span-1 flex justify-center">
                     <span class="block w-px h-full bg-gray-400" />
                 </div>
-                <!-- <Signup class="col-span-2" /> -->
-                <ColorUtils />
+                <ColorUtils class="col-span-2" :previous-colors="previousColors" />
             </div>
         </div>
     </main>

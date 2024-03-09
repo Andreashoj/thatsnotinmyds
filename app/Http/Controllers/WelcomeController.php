@@ -8,11 +8,6 @@ class WelcomeController extends Controller
 {
     public function show()
     {
-        return Inertia::render('Welcome', [
-            'user' => [
-                'name' => 'Andreas',
-                'id' => 1,
-            ]
-        ]);
+        return Inertia::render('Index');
     }
 }

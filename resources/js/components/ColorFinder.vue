@@ -25,13 +25,13 @@ watch(color, () => {
 </script>
 <template>
     <div class="relative">
-        <div class="z-10 relative">
+        <div class="z-10 relative mb-8 lg:mb-0">
             <div class="flex gap-2">
                 <Dropdown class="flex-1" v-model="framework" :options="frameworkOptions" />
                 <input v-model="color" class="rounded indent-2 py-1 flex-1" placeholder="Enter your color code here" />
             </div>
 
-            <div v-if="validHex" class="mt-8 h-24 flex gap-4 w-full">
+            <div v-if="validHex" class="mt-8 flex gap-4 w-full">
                 <ColorItem v-for="item in getClosestColors" :color="item.colorName" :shade="item.shade" />
             </div>
 

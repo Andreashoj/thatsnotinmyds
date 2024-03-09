@@ -15,8 +15,8 @@ const getTextColor = computed(() => {
 </script>
 
 <template>
-    <div class="h-24 flex-1 text-sm rounded flex justify-center items-center" :class="`bg-${color}-${shade}`"
-        :style="`color: ${getTextColor}`">
+    <div class="h-12 lg:h-24 text-center flex-1 text-sm rounded flex justify-center items-center"
+        :class="`bg-${color}-${shade}`" :style="`color: ${getTextColor}`">
         {{ color }} - {{ shade }}
     </div>
 </template>

@@ -10,11 +10,16 @@ defineProps({
 const { isSupported, open, sRGBHex } = useEyeDropper()
 const emits = defineEmits(['update-color'])
 
+const updateColor = (val) => {
+    emits('update-color', val)
+}
+
 watch(sRGBHex, (val) => {
     if (val) {
-        emits('update-color', val)
+        updateColor(val)
     }
 })
+
 </script>
 <template>
     <div>
@@ -34,8 +39,8 @@ watch(sRGBHex, (val) => {
             <span class="text-gray-200">Previously selected colors</span>
 
             <div class="flex flex-wrap  gap-2 mt-1">
-                <div v-for="color in previousColors" :key="color" :style="{ backgroundColor: color }"
-                    class="h-11 w-10 rounded bg-red-200" />
+                <button v-for="( color, index ) in  previousColors " :key="color + index"
+                    :style="{ backgroundColor: color }" @click="updateColor(color)" class="h-11 w-10 rounded bg-red-200" />
             </div>
         </div>
     </div>

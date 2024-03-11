@@ -39,7 +39,7 @@ onMounted(() => {
         <meta name="description" content="Find the closest matching color for your tailwind design system">
     </Head>
 
-    <main class="grid grid-cols-10 h-full relative overflow-hidden">
+    <main class="grid grid-cols-10 h-screen relative overflow-hidden">
         <div class="gradient absolute -top-1/2 left-1/2 h-[1200px] w-[500px] rounded-full -rotate-45" />
         <div
             class="col-start-2 col-span-8 lg:col-start-3 lg:col-span-6 2xl:col-span-4 2xl:col-start-4 relative z-10 flex justify-center items-center  flex-col mb-8">

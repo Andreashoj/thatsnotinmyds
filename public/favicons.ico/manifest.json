@@ -2,7 +2,7 @@
  "name": "App",
  "icons": "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicons.ico",
       "sizes": "192x192 144x144 96x96 72x72 48x48 36x36",
       "type": "image/x-icon"
     }

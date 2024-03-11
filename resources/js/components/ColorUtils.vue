@@ -24,8 +24,8 @@ watch(sRGBHex, (val) => {
 <template>
     <div>
         <div class="flex">
-            <button :disabled="!isSupported" @click="() => open()"
-                class="bg-emerald-500 px-2 h-9 flex justify-center items-center rounded">
+            <button name="eye dropper button, lets you select a visible color on your screen" :disabled="!isSupported"
+                @click="() => open()" class="bg-emerald-500 px-2 h-9 flex justify-center items-center rounded">
                 <span class="whitespace-nowrap">
                     Pick color
                 </span>
@@ -38,7 +38,8 @@ watch(sRGBHex, (val) => {
 
             <div class="flex flex-wrap  gap-2 mt-1">
                 <button v-for="( color, index ) in  previousColors " :key="color + index"
-                    :style="{ backgroundColor: color }" @click="updateColor(color)" class="h-11 w-10 rounded bg-red-200" />
+                    :style="{ backgroundColor: color }" @click="updateColor(color)" class="h-11 w-10 rounded bg-red-200"
+                    :name="`previous color ${color}, select it again`" />
             </div>
         </div>
     </div>

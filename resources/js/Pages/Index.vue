@@ -1,6 +1,7 @@
 <script setup>
 import ColorFinder from '../components/ColorFinder.vue'
 import ColorUtils from '../components/ColorUtils.vue';
+import { Head } from '@inertiajs/vue3'
 import { ref, onMounted } from 'vue'
 defineProps({
     user: Object,
@@ -33,6 +34,11 @@ onMounted(() => {
 </script>
 
 <template>
+    <Head>
+        <title>DS color finder</title>
+        <meta name="description" content="Find the closest matching color for your tailwind design system">
+    </Head>
+
     <main class="grid grid-cols-10 h-full relative overflow-hidden">
         <div class="gradient absolute -top-1/2 left-1/2 h-[1200px] w-[500px] rounded-full -rotate-45" />
         <div

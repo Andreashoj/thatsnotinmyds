@@ -41,7 +41,7 @@ onMounted(() => {
                 Find the perfect color match without leaving your design.
             </h1>
 
-            <div class="grid grid-cols-7 mt-12 lg:mt-20">
+            <div class="grid grid-cols-7 mt-12 lg:mt-20 w-full">
                 <ColorFinder class="col-span-7 lg:col-span-4" v-model="color"
                     @update-previous-colors="updatePreviousColors" />
                 <div class="hidden lg:flex col-span-1 justify-center">

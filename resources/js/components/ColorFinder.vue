@@ -36,8 +36,8 @@ watch(color, () => {
             <div v-if="validHex" class="mt-4">
                 <span class="text-gray-300 text-sm">Sorted by closest color match to your code</span>
                 <div v-if="validHex" class=" flex gap-4 w-full mt-1">
-                    <ColorItem v-for="item in getClosestColors" :color="item.colorName" :shade="item.shade"
-                        @click="emits('update-color')" />
+                    <ColorItem v-for="( item, index ) in getClosestColors" :color="item.colorName" :shade="item.shade"
+                        :index="index + 1" @click="emits('update-color')" />
                 </div>
             </div>
             <span v-else class="text-white mt-4 block">Uh ohh! Invalid hexcode</span>

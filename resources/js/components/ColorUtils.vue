@@ -34,7 +34,7 @@ watch(sRGBHex, (val) => {
         </div>
 
         <div class=" w-full mt-4">
-            <span class="text-gray-300 text-sm">Previously selected colors</span>
+            <span v-if="previousColors.length" class="text-gray-300 text-sm">Previously selected colors</span>
 
             <div class="flex flex-wrap  gap-2 mt-1">
                 <button v-for="( color, index ) in  previousColors " :key="color + index"

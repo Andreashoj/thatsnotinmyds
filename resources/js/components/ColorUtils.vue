@@ -39,7 +39,7 @@ watch(sRGBHex, (val) => {
             <div class="flex flex-wrap  gap-2 mt-1">
                 <button v-for="( color, index ) in  previousColors " :key="color + index"
                     :style="{ backgroundColor: color }" @click="updateColor(color)" class="h-11 w-10 rounded bg-red-200"
-                    :name="`previous color ${color}, select it again`" />
+                    :aria-label="`previous color ${color}, select it again`" />
             </div>
         </div>
     </div>

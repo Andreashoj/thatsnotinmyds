@@ -28,7 +28,7 @@ const selected = defineModel({ type: Object as () => { name: string, value: stri
             <transition leave-active-class="transition duration-100 ease-in" leave-from-class="opacity-100"
                 leave-to-class="opacity-0">
                 <ListboxOptions
-                    class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+                    class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-50">
                     <ListboxOption v-slot="{ active, selected }" v-for="option in options" :key="option.name"
                         :value="option" as="template">
                         <li :class="[

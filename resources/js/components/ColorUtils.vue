@@ -33,7 +33,7 @@ watch(sRGBHex, (val) => {
             </button>
         </div>
 
-        <div class=" w-full" :class="!isSupported ? 'mt-4' : '-mt-2'">
+        <div class=" w-full mt-4">
             <span class="text-gray-300 text-sm">Previously selected colors</span>
 
             <div class="flex flex-wrap  gap-2 mt-1">

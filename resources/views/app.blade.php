@@ -21,6 +21,8 @@
     <meta name="theme-color" content="#ffffff">
     @vite('resources/js/app.js')
     @inertiaHead
+
+    <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="89ede6ec-bc0c-4d9d-8bea-441db5c8e1c5"></script>
   </head>
   <body>
     @inertia

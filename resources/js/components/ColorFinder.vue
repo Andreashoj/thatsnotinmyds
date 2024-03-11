@@ -8,13 +8,14 @@ const color = defineModel({ default: '#fdfdfd' })
 const frameworkOptions = [{ name: 'Tailwind', value: 'tailwind' }]
 const framework = ref(frameworkOptions[0])
 const getClosestColors = computed(() => findClosestColors(color.value))
-const emits = defineEmits(['update-previous-colors'])
+const emits = defineEmits(['update-previous-colors', 'update-color'])
 
 
 const validHex = computed(() => {
     const isHexCode = /^#([0-9A-Fa-f]{6})$/;
     return isHexCode.test(color.value);
 })
+
 
 watch(color, () => {
     if (validHex.value) {
@@ -32,7 +33,8 @@ watch(color, () => {
             </div>
 
             <div v-if="validHex" class="mt-8 flex gap-4 w-full">
-                <ColorItem v-for="item in getClosestColors" :color="item.colorName" :shade="item.shade" />
+                <ColorItem v-for="item in getClosestColors" :color="item.colorName" :shade="item.shade"
+                    @click="emits('update-color')" />
             </div>
 
             <span v-else class="text-white mt-4 block">Uh ohh! Invalid hexcode</span>

@@ -23,9 +23,9 @@ watch(sRGBHex, (val) => {
 </script>
 <template>
     <div>
-        <div class="flex" v-if="isSupported">
+        <div class="flex">
             <button :disabled="!isSupported" @click="() => open()"
-                class="bg-emerald-500 px-2 h-8 flex justify-center items-center rounded">
+                class="bg-emerald-500 px-2 h-9 flex justify-center items-center rounded">
                 <span class="whitespace-nowrap">
                     Pick color
                 </span>
@@ -35,7 +35,7 @@ watch(sRGBHex, (val) => {
             <div :style="{ backgroundColor: sRGBHex }" class="h-8 w-8 rounded ml-2.5" />
         </div>
 
-        <div class=" w-full" :class="isSupported ? 'mt-3' : '-mt-2'">
+        <div class=" w-full" :class="!isSupported ? 'mt-3' : '-mt-2'">
             <span class="text-gray-200">Previously selected colors</span>
 
             <div class="flex flex-wrap  gap-2 mt-1">

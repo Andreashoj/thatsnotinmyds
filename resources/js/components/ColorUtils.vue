@@ -31,12 +31,10 @@ watch(sRGBHex, (val) => {
                 </span>
                 <EyeDropperIcon class="ml-2.5 h-4 w-4 fill-black" />
             </button>
-
-            <div :style="{ backgroundColor: sRGBHex }" class="h-8 w-8 rounded ml-2.5" />
         </div>
 
-        <div class=" w-full" :class="!isSupported ? 'mt-3' : '-mt-2'">
-            <span class="text-gray-200">Previously selected colors</span>
+        <div class=" w-full" :class="!isSupported ? 'mt-4' : '-mt-2'">
+            <span class="text-gray-300 text-sm">Previously selected colors</span>
 
             <div class="flex flex-wrap  gap-2 mt-1">
                 <button v-for="( color, index ) in  previousColors " :key="color + index"

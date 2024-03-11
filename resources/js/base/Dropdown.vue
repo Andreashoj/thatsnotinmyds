@@ -35,7 +35,7 @@ const selected = defineModel({ type: Object as () => { name: string, value: stri
                             active ? 'bg-blue-100' : 'text-gray-900',
                             'relative cursor-default select-none py-2 px-4',
                         ]">
-                            <span v-if="selected" class="absolute inset-y-0 right-4 flex items-center pl-3 text-amber-600">
+                            <span v-if="selected" class="absolute inset-y-0 right-4 flex items-center pl-3">
                                 <CheckIcon class="h-4 w-4 fill-gray-700" aria-hidden="true" />
                             </span>
                             <span :class="[

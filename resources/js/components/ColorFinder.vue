@@ -27,9 +27,10 @@ watch(color, () => {
 <template>
     <div class="relative">
         <div class="z-10 relative mb-8 lg:mb-0">
-            <div class="flex gap-2">
+            <div class="flex gap-4">
                 <Dropdown class="flex-1" v-model="framework" :options="frameworkOptions" />
-                <input v-model="color" class="rounded indent-2 py-1 flex-1" placeholder="Enter your color code here" />
+                <input v-model="color" class="rounded indent-2 py-1 flex-1 text-sm text-gray-700"
+                    placeholder="Enter your color code here" />
             </div>
 
             <div v-if="validHex" class="mt-8 flex gap-4 w-full">

@@ -29,7 +29,7 @@ watch(color, () => {
         <div class="z-10 relative mb-8 lg:mb-0">
             <div class="flex gap-4">
                 <Dropdown class="flex-1" v-model="framework" :options="frameworkOptions" />
-                <input v-model="color" class="rounded indent-2 py-1 flex-1 text-sm text-gray-700"
+                <input v-model="color" class="rounded indent-2 py-1 flex-1 text-sm text-gray-700 w-full"
                     placeholder="Enter your color code here" />
             </div>
 
